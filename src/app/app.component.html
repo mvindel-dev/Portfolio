@@ -8,19 +8,19 @@
             </div>
             <div class="nav-menu" id="myNavMenu">
                 <ul class="nav_menu_list">
-                    <li class="nav_list">
+                    <li class="nav_list" (click)="closeMenu()">
                         <a href="#home" class="nav-link active-link">Inici</a>
                         <div class="circle"></div>
                     </li>
-                    <li class="nav_list">
+                    <li class="nav_list" (click)="closeMenu()">
                         <a href="#about" class="nav-link">Sobre mi</a>
                         <div class="circle"></div>
                     </li>
-                    <li class="nav_list">
+                    <li class="nav_list" (click)="closeMenu()">
                         <a href="#projects" class="nav-link">Projectes</a>
                         <div class="circle"></div>
                     </li>
-                    <li class="nav_list">
+                    <li class="nav_list" (click)="closeMenu()">
                         <a href="#contact" class="nav-link">Contacte</a>
                         <div class="circle"></div>
                     </li>
@@ -30,7 +30,7 @@
                 <button class="btn">Download CV <i class="uil uil-file-alt"></i></button>
             </div> -->
             <div class="nav-menu-btn">
-                <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+                <i class="uil uil-bars" (click)="myMenuFunction()"></i>
             </div>
         </nav>
 

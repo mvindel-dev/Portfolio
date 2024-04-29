@@ -61,18 +61,21 @@ export class AppComponent implements OnInit{
     window.addEventListener('scroll', function(){scrollActive(sections)})
   }
 
-
   myMenuFunction(){
     let menuBtn = document.getElementById("myNavMenu");
     if(menuBtn){
       if(menuBtn.className === "nav-menu"){
         menuBtn.className += " responsive";
       } else {
-        menuBtn.className = "nav-menu";
+        menuBtn.className = "nav-menu";        
       }
     }
   }
-  
+
+  closeMenu(){
+    let menuBtn = document.getElementById("myNavMenu");
+    if(menuBtn) menuBtn.className = "nav-menu";
+  }
   
 }
 
