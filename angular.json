@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/atropos/atropos.css",
               "src/styles.css"
             ],
             "scripts": []
