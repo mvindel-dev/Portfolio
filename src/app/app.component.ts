@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Typed from 'typed.js';
 import ScrollReveal from 'scrollreveal';
+import Atropos from 'atropos';
 
 @Component({
   selector: 'app-root',
@@ -59,6 +60,11 @@ export class AppComponent implements OnInit{
 
     const sections = document.querySelectorAll('section[id]')
     window.addEventListener('scroll', function(){scrollActive(sections)})
+
+
+    const myAtropos = Atropos({
+      el: '.my-atropos'
+    });
   }
 
   myMenuFunction(){
