@@ -81,7 +81,7 @@ body{
 .container{
     width: 100%;
     position: relative;
-    overflow-x: hidden; /* not mandatory */
+    overflow-x: hidden;
 }
 
 /* ----- NAVIGATION BAR ----- */
@@ -244,7 +244,7 @@ nav{
     margin: auto 0;
     width: 380px;
     height: 380px;
-    animation: imgFloat 5s ease-in-out infinite;
+    animation: imgFloat 7s ease-in-out infinite;
 }
 .image img{
     width: 380px;
@@ -253,12 +253,12 @@ nav{
 }
 @keyframes imgFloat {
     50%{
-        transform: translateY(20px);
+        transform: translateY(10px);
     }
 }
 .scroll-btn{
    position: absolute;
-   bottom: 0;
+   bottom: 30px;
    left: 50%;
    translate: -50%;
    display: flex;
@@ -381,7 +381,7 @@ h3{
     gap: 20px;
     flex-wrap: wrap;
 }
-.project-box{
+.project-box {
     position: relative;
     display: flex;
     justify-content: center;
@@ -389,17 +389,34 @@ h3{
     flex-direction: column;
     width: 30%;
     height: 250px;
-    background: var(--color-white);
     border-radius: 20px;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     overflow: hidden;
+}
+.project-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(30%);
+    z-index: -1;
 }
 .project-box>img{
     object-fit: cover;
 }
 .project-box label{
     font-size: 15px;
-    color: #777;
+    color: transparent;
+}
+.project-box h3 {
+    position: relative;
+    z-index: 2;
+    color: white;
 }
 .project-box::after, .contact-info::after{
     content: "";
@@ -411,16 +428,66 @@ h3{
     transition: .4s;
     z-index: 1;
 }
-.project-box:hover.project-box::after,
-.contact-info:hover.contact-info::after{
-    bottom: 0;
-}
+
+
 .project-box:hover.project-box i,
 .project-box:hover.project-box>h3,
 .project-box:hover.project-box>label{
     color: var(--color-white);
     z-index: 2;
 }
+
+.project-box.egma::before {
+    background-image: url('/assets/img/projects/egma.png');
+}
+
+.project-box.gastrobacus::before {
+    background-image: url('/assets/img/projects/gastrobacus.jpg');
+}
+
+.project-box.el-mirall::before {
+    background-image: url('/assets/img/projects/mirall.png');
+}
+
+.project-link {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: var(--color-white);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-box:hover .project-link {
+    opacity: 1;
+}
+
+.project-link {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: var(--color-white);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-box:hover .project-link {
+    opacity: 1;
+}
+
+.project-link i {
+    font-size: 24px;
+    transition: font-size 0.3s ease;
+}
+
+.project-box:hover .project-link i {
+    font-size: 30px;
+}
+
 
 /* ----- CONTACT BOX ----- */
 .contact-info{
@@ -461,6 +528,10 @@ h3{
     z-index: 2;
 }
 
+.contact-info:hover.contact-info::after{
+    bottom: 0;
+}
+
 /* ----- CONTACT FORM ----- */
 .form-control{
     display: flex;
@@ -491,6 +562,7 @@ textarea{
     padding: 15px 20px;
     outline: none;
     resize: none;
+    margin-top: 10px;
 }
 .form-button>.btn{
     display: flex;
@@ -505,6 +577,16 @@ textarea{
 .form-button i{
     font-size: 18px;
     rotate: -45deg;
+}
+.success{
+    background-color: rgb(93, 230, 93);
+    border-radius: 10px;
+}
+
+.success-mail{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
 }
 
 /* ----- FOOTER BOX ----- */

@@ -1,0 +1,34 @@
+<section class="section" id="contact">
+    <div class="top-header">
+        <h1>Posat en contacte amb mi</h1>
+        <span>Tens un projecte en ment? Contacta amb mi i fem-lo realitat</span>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="contact-info">
+                <h2>Troba'm<i class="uil uil-corner-right-down"></i></h2>
+                <p><i class="uil uil-envelope"></i> Email: marcvindeldev@gmail.com</p>
+                <p><i class="uil uil-phone"></i> +34 642 38 08 09</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-control">
+                <form (submit)="sendEmail($event)">
+                    <div class="form-inputs">
+                        <input type="text" class="input-field" placeholder="Email" name="user_email">
+                        <input type="text" class="input-field" placeholder="Assumpte" name="subject">
+                    </div>
+                    <div class="text-area">
+                        <textarea placeholder="Missatge" name="message"></textarea>
+                    </div>
+                    <div class="form-button" *ngIf="!success">
+                        <button class="btn">Enviar <i class="uil uil-message"></i></button>
+                    </div>
+                    <div class="success" *ngIf="success">
+                        <p class="success-mail">E-Mail enviat correctament</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
